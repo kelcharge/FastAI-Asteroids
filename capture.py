@@ -7,8 +7,8 @@ from utils.grabscreen import grab_screen
 from utils.getkeys import key_check
 
 
-file_name = "E:/workspace/FastAI-Asteroids/data/training_data.npy"
-file_name2 = "E:/workspace/FastAI-Asteroids/data/target_data.npy"
+file_name = "data/training_data.npy"
+file_name2 = "data/target_data.npy"
 
 
 def get_data():

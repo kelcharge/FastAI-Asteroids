@@ -16,7 +16,7 @@ keyboard2 = Controller()
 def label_func(x): return x.parent.name
 print("Enter filename: ")
 filename = input()
-learn_inf = load_learner("E:/workspace/python/" + filename + ".pkl")
+learn_inf = load_learner(filename + ".pkl")
 print("loaded learner")
 
 # Sleep time after actions

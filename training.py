@@ -8,13 +8,13 @@ import os
 def label_func(x): return x.parent.name
 
 def run():
-    path = Path("E:/workspace/FastAI-Asteroids/images")
+    path = Path("images")
     fnames = get_image_files(path)
     print(f"Total Images:{len(fnames)}")
 
     dls = ImageDataLoaders.from_path_func(path, fnames, label_func,bs=40, num_workers=0)
 
-    if os.path.isfile("E:/workspace/FastAI-Asteroids/images/models/net.pth"):
+    if os.path.isfile("images/models/net.pth"):
         learn = vision_learner(dls, resnet18, metrics=accuracy).load('net')
     else:
         learn = vision_learner(dls, resnet18, metrics=accuracy)

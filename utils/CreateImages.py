@@ -27,13 +27,13 @@ for data in holder_list:
     #print(data[1])
     if data[1] == 'Up':
         count_up += 1
-        cv2.imwrite(f"E:/workspace/FastAI-Asteroids/images/Up/H7-u{count_up}.png", data[0]) 
+        cv2.imwrite(f"images/Up/H7-u{count_up}.png", data[0]) 
     elif data[1] == 'Left':
         count_left += 1
-        cv2.imwrite(f"E:/workspace/FastAI-Asteroids/images/Left/H7-l{count_left}.png", data[0]) 
+        cv2.imwrite(f"images/Left/H7-l{count_left}.png", data[0]) 
     elif data[1] == 'Right':
         count_right += 1
-        cv2.imwrite(f"E:/workspace/FastAI-Asteroids/images/Right/H7-r{count_right}.png", data[0]) 
+        cv2.imwrite(f"images/Right/H7-r{count_right}.png", data[0]) 
     elif data[1] == ' ':
         count_shoot += 1
-        cv2.imwrite(f"E:/workspace/FastAI-Asteroids/images/Shoot/H7-j{count_shoot}.png", data[0]) 
+        cv2.imwrite(f"images/Shoot/H7-j{count_shoot}.png", data[0]) 
