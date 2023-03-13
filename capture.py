@@ -7,8 +7,8 @@ from utils.grabscreen import grab_screen
 from utils.getkeys import key_check
 
 
-file_name = "C:/Users/programmer/Desktop/FallGuys/data/training_data.npy"
-file_name2 = "C:/Users/programmer/Desktop/FallGuys/data/target_data.npy"
+file_name = "E:/workspace/FastAI-Asteroids/data/training_data.npy"
+file_name2 = "E:/workspace/FastAI-Asteroids/data/target_data.npy"
 
 
 def get_data():
@@ -33,32 +33,31 @@ image_data, targets = get_data()
 while True:
     keys = key_check()
     print("waiting press B to start")
+    print(keys)
     if keys == "B":
         print("Starting")
         break
 
 
-count = 0
 while True:
-    count +=1
-    last_time = time.time()
-    image = grab_screen(region=(50, 100, 799, 449))
-    image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    image = cv2.Canny(image, threshold1=119, threshold2=250)
-
-    image = cv2.resize(image, (224, 224))
-
-    # Debug line to show image
-    cv2.imshow("AI Peak", image)
-    cv2.waitKey(1)
-
-    # Convert to numpy array
-    image = np.array(image)
-    image_data.append(image)
-
     keys = key_check()
-    targets.append(keys)
+    last_time = time.time()
+
+    if keys == "Left" or keys == "Right" or keys == " ":  # only save the images for which we care
+        image = grab_screen(region=(10, 50, 810, 590))
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        image = cv2.resize(image, (224, 224))
+
+        # Debug line to show image
+        # cv2.imshow("AI Peak", image)
+        # cv2.waitKey(1)
+
+        # Convert to numpy array
+        image = np.array(image)
+        image_data.append(image)
+
+        targets.append(keys)
+
     if keys == "H":
         break
 

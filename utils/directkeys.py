@@ -1,20 +1,18 @@
 # direct inputs
 # source to this solution and code:
 # http://stackoverflow.com/questions/14489013/simulate-python-keypresses-for-controlling-a-game
-# http://www.gamespp.com/directx/directInputKeyboardScanCodes.html
+# https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-6.0/aa299374(v=vs.60)?redirectedfrom=MSDN
 
 import ctypes
 import time
 
 SendInput = ctypes.windll.user32.SendInput
 
-
-W = 0x11
-A = 0x1E
-S = 0x1F
-D = 0x20
-M = 0x32
-K = 0x25
+# Replace these with arrow keys
+LEFT = 0x4B
+RIGHT = 0x4D
+UP = 0x48
+DOWN = 0x50
 SPACE = 0x57
 
 # C struct redefinitions
