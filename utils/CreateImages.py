@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-data = np.load("../data/training_data.npy", allow_pickle=True)
-targets = np.load("../data/target_data.npy", allow_pickle=True)
+data = np.load("data/training_data.npy", allow_pickle=True)
+targets = np.load("data/target_data.npy", allow_pickle=True)
 
 print(f'Image Data Shape: {data.shape}')
 print(f'targets Shape: {targets.shape}')
